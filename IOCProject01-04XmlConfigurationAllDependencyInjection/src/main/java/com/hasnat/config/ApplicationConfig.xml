@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+    
+    <bean id="ltime" class="java.time.LocalTime" factory-method= "now"/>
+    <bean id="time" class="java.time.LocalTime" factory-method= "of">
+    <constructor-arg value="4"/>
+    <constructor-arg value="5"/>
+    </bean>
+    
+    
+        <!-- Properties can be set here -->
+	<bean id="dt" class="com.hasnat.sbeans.TimeNow">
+	
+    <property name= "lt" ref="ltime" />
+    <constructor-arg name= "lt1" ref = "time"/>
+    </bean>
+
+</beans>
